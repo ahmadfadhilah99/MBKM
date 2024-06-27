@@ -1,5 +1,5 @@
 <?php
-    include_once('../Koneksi/config.php');
+    include_once('../config.php');
     
     $info = $_GET['type'];
 

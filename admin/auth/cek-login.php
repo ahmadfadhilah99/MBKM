@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include_once('../../Koneksi/config.php');
+include_once('../../config.php');
 
 $username = $_POST['username'];
 $password = md5($_POST['password']); //password sudah dienkripsi

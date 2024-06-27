@@ -1,5 +1,5 @@
 <?php
-    include_once('../Koneksi/config.php');
+    include_once('../config.php');
 
     $id_cluster = $_GET['id'];
     $select = mysqli_query($mysqli, "SELECT * FROM tbl_cluster WHERE id_cluster = $id_cluster");

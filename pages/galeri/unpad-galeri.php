@@ -1,5 +1,5 @@
 <?php 
-  include_once('../../Koneksi/config.php');
+  include_once('../../config.php');
   
   // Mengambil data sesuai dengan halaman yang ada
   if (isset($_GET['page'])) {

@@ -1,5 +1,5 @@
 <?php
-    include_once('../Koneksi/config.php');
+    include_once('../config.php');
 
         $type = ["Kakao", "Pendidikan", "Perikanan", "Peternakan", "Kesehatan", "Stunting", "BUMDESa", "Dokumentasi"];
 
