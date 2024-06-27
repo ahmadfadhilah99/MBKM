@@ -4,7 +4,7 @@
     $id_cluster = $_GET['id'];
     $select = mysqli_query($mysqli, "SELECT * FROM tbl_cluster WHERE id_cluster = $id_cluster");
 
-        $type = ["Kakao", "Jagung", "Perikanan", "Peternakan", "Kesehatan", "Stunting"];
+        $type = ["Kakao", "Pendidikan", "Perikanan", "Peternakan", "Kesehatan", "Stunting", "BUMDESa", "Dokumentasi"];
 
 
     $info = $_GET['type'];
@@ -13,6 +13,8 @@
         $id = $_POST['id'];
         $type = $_POST['type'];
         $desc = $_POST['desc'];
+        $menu = $_POST['menu'];
+        $sub = $_POST['sub'];
         $gLama = $_POST['gambarLama'];
 
         // gambarr baru
@@ -25,14 +27,14 @@
         
         // mengubah data tanpa gambar baru
         if($gBaru == ''){
-            $result = mysqli_query($mysqli, "UPDATE `tbl_cluster` SET `id_cluster`='$id',`type_cluster`='$type',`desc_cluster`='$desc',`image_cluster`='$gLama'
+            $result = mysqli_query($mysqli, "UPDATE `tbl_cluster` SET `id_cluster`='$id',`type_cluster`='$type',`desc_cluster`='$desc',`image_cluster`='$gLama',`menu_cluster`='$menu',`sub_menu_cluster`='$sub'
         WHERE `id_cluster` = '$id'");
 
         } else {
             if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
                 if($ukuran < 1044070){			
                     move_uploaded_file($file_tmp, '../images/cluster/'.$gBaru);
-                    $result = mysqli_query($mysqli, "UPDATE `tbl_cluster` SET `id_cluster`='$id',`type_cluster`='$type',`desc_cluster`='$desc',`image_cluster`='$gBaru'
+                    $result = mysqli_query($mysqli, "UPDATE `tbl_cluster` SET `id_cluster`='$id',`type_cluster`='$type',`desc_cluster`='$desc',`image_cluster`='$gBaru',`menu_cluster`='$menu',`sub_menu_cluster`='$sub'
                     WHERE `id_cluster` = '$id'");
                     if($query){
                         echo 'FILE BERHASIL DI UPLOAD';
@@ -231,19 +233,19 @@
             <?php
                for($i=0; $i < count($type); $i++){
             ?>
-            <li class="nav-item <?= ($type[$i] == $_GET['type']) ? 'active' : '' ?>">
-            <a class="nav-link" href="cluster-<?=$type[$i] ?>.php?type=<?=$type[$i] ?>">
+            <li class="nav-item" >
+              <a class="nav-link" href="cluster-<?=$type[$i] ?>.php?type=<?=$type[$i] ?>">
                 <i class="icon-head menu-icon"></i>
-                <span class="menu-title">Cluster <?=$type[$i] ?></span>
+                <span class="menu-title"><?=($type[$i]!="BUMDESa" and $type[$i]!="Dokumentasi")? "Cluster":""?> <?=$type[$i] ?></span>
               </a>
             </li>
             <?php
                 }
             ?>
             <!-- <li class="nav-item">
-            <a class="nav-link" href="cluster-jagung.php">
+            <a class="nav-link" href="cluster-Pendidikan.php">
                 <i class="icon-head menu-icon"></i>
-                <span class="menu-title">Cluster Jagung</span>
+                <span class="menu-title">Cluster Pendidikan</span>
               </a>
             </li> -->
 
@@ -287,34 +289,65 @@
                     <input class="form-control" id="formCluster" name="id" value="<?= $_GET['id']?>" hidden>
                         <div class="col-md-12 mt-1">
                             <label for="formCluster" class="form-label">Type Cluster</label>
-                            <input class="form-control" id="formCluster" name="type" value="<?= $cluster['type_cluster']?>" required>
+                            <input class="form-control" id="formCluster" name="type" value="<?= $_GET['type']?>" required>
                             <p><i>Gunakan kapital dalam penulisan type cluster!</i></p>
                         </div>
+
                         <div class="col-md-12 mt-4">
                             <label for="formDesc" class="form-label">Deskripsi</label>
-                            <input type="text" class="form-control" id="formDesc" name="desc" value="<?= $cluster['desc_cluster']?>"required >
+                            <input type="text" class="form-control" id="formDesc" name="desc" value="<?= $cluster['desc_cluster']?>" required>
                         </div>
+
                         <div class="col-md-12 mt-4">
-                            <img src="../images/cluster/<?=$cluster['image_cluster'] ?>"  alt="none"  style="border-radius: 0; width:150px; height:150px; object-fit:cover;">
-                            <input type="text" class="form-control" id="formGambar" name="gambarLama" value="<?= $cluster['image_cluster']?>" hidden >
-                        </div>
-                        <div class="col-md-12 mt-4">
-                            <input type="file"  id="formGambar" name="gambarBaru">
-                        </div>
+                            <label for="formMenu" class="form-label">Menu</label>
+                            <select id="formMenu" class="form-control"  name="menu" required>
+                              <option value="<?= $cluster['menu_cluster']?>"><?= $cluster['menu_cluster']?></option>
+
+                                <?php if ($_GET['type'] == 'Kakao' or $_GET['type'] == 'Pendidikan' or $_GET['type'] == 'Perikanan' ) {?>
+                                  <option value="UBT">UBT</option>
+                              
+                                <?php } if ($_GET['type'] == 'Kakao' or $_GET['type'] == 'Kesehatan' or $_GET['type'] == 'Stunting' ) {?>
+                                  <option value="PPG">PPG</option>
+                                  
+                                <?php } if ($_GET['type'] == 'Kakao' or $_GET['type'] == 'Peternakan' or $_GET['type'] == 'Stunting' ) {?>
+                                  <option value="PENS">PENS</option>
+
+                                <?php } if ($_GET['type'] == 'Perikanan' ) {?>
+                                <option value="UNPAD">UNPAD</option>
+                                <?php } ?>
+                            </select>                        
+                          </div>
+
+                          <div class="col-md-12 mt-4">
+                              <label for="formSub" class="form-label">Sub Menu</label>
+                              <select id="formSub" class="form-control" name="sub" required>
+                                <option value="<?= $cluster['sub_menu_cluster']?>"><?= $cluster['sub_menu_cluster']?></option>
+                                  <option value="A">A</option>
+                                  <option value="B">B</option>
+                              </select>                        
+                          </div>
+
+                          <div class="col-md-12 mt-4">
+                              <img src="../images/cluster/<?=$cluster['image_cluster'] ?>"  alt="none"  style="border-radius: 0; width:150px; height:150px; object-fit:cover;">
+                              <input type="text" class="form-control" id="formGambar" name="gambarLama" value="<?= $cluster['image_cluster']?>" hidden >
+                          </div>
+                          <div class="col-md-12 mt-4">
+                              <input type="file"  id="formGambar" name="gambarBaru">
+                          </div>
                                 
                         <div class="col-12 mt-4">
                             <button class="btn btn-primary mt-3" type="submit" name="edit">Update</button>
                         </div>
                     </form>
-                <?php
+                    <?php
                     }
                 ?>
                 </div>
               </div>
-
+              
             </div>
-   
-
+            
+            
     <!-- plugins:js -->
     <script src="../vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->

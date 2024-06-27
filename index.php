@@ -344,13 +344,13 @@
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
                 <i class="icon-head menu-icon"></i>
-                <span class="menu-title">Cluster Jagung</span>
+                <span class="menu-title">Cluster Pendidikan</span>
                 <i class="menu-arrow"></i>
               </a>
               <div class="collapse" id="form-elements">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"><a class="nav-link" href="pages/ppg-utama-jagung.php">Poltek Piksi Ganesha</a></li>
-                  <li class="nav-item"><a class="nav-link" href="pages/pens-utama-jagung.php">PENS</a></li>
+                  <li class="nav-item"><a class="nav-link" href="pages/ubt-utama-pendidikan.php">UBT</a></li>
+          
                 </ul>
               </div>
             </li>

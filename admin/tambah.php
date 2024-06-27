@@ -1,7 +1,7 @@
 <?php
     include_once('../Koneksi/config.php');
 
-        $type = ["Kakao", "Jagung", "Perikanan", "Peternakan", "Kesehatan", "Stunting"];
+        $type = ["Kakao", "Pendidikan", "Perikanan", "Peternakan", "Kesehatan", "Stunting", "BUMDESa", "Dokumentasi"];
 
 
     $info = $_GET['type'];
@@ -9,6 +9,8 @@
     if (isset($_POST['add'])) {
         $type = $_POST['type'];
         $desc = $_POST['desc'];
+        $menu = $_POST['menu'];
+        $sub = $_POST['sub'];
 
         $ekstensi_diperbolehkan	= array('png','jpg');
         $namaG = $_FILES['gambar']['name'];
@@ -19,16 +21,16 @@
 
         // mengirim data jika tidak ada gambar yang ditambahkan
         if($namaG == ''){
-            $result = mysqli_query($mysqli, "INSERT INTO `tbl_cluster` (`type_cluster`, `desc_cluster`)  
-        VALUES ('$type', '$desc');"); 
+            $result = mysqli_query($mysqli, "INSERT INTO `tbl_cluster` (`type_cluster`, `desc_cluster`, `menu_cluster`, `sub_menu_cluster`)  
+        VALUES ('$type', '$desc', '$menu', '$sub');"); 
 
         // mengirim data jika ada gambar yang ditambahkan
         } else {
             if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
                 if($ukuran < 1044070){			
                     move_uploaded_file($file_tmp, '../images/cluster/'.$namaG);
-                    $query = mysqli_query($mysqli, "INSERT INTO `tbl_cluster` (`type_cluster`, `desc_cluster`, `image_cluster`) 
-                    VALUES ('$type', '$desc', '$namaG');");
+                    $query = mysqli_query($mysqli, "INSERT INTO `tbl_cluster` (`type_cluster`, `desc_cluster`, `image_cluster`, `menu_cluster`, `sub_menu_cluster`) 
+                    VALUES ('$type', '$desc', '$namaG', '$menu', '$sub');");
 
                     if($query){
                         echo 'FILE BERHASIL DI UPLOAD';
@@ -227,19 +229,19 @@
             <?php
                for($i=0; $i < count($type); $i++){
             ?>
-            <li class="nav-item <?= ($type[$i] == $_GET['type']) ? 'active' : '' ?>">
-            <a class="nav-link" href="cluster-<?=$type[$i] ?>.php?type=<?=$type[$i] ?>">
+            <li class="nav-item" >
+              <a class="nav-link" href="cluster-<?=$type[$i] ?>.php?type=<?=$type[$i] ?>">
                 <i class="icon-head menu-icon"></i>
-                <span class="menu-title">Cluster <?=$type[$i] ?></span>
+                <span class="menu-title"><?=($type[$i]!="BUMDESa" and $type[$i]!="Dokumentasi")? "Cluster":""?> <?=$type[$i] ?></span>
               </a>
             </li>
             <?php
                 }
             ?>
             <!-- <li class="nav-item">
-            <a class="nav-link" href="cluster-jagung.php">
+            <a class="nav-link" href="cluster-Pendidikan.php">
                 <i class="icon-head menu-icon"></i>
-                <span class="menu-title">Cluster Jagung</span>
+                <span class="menu-title">Cluster Pendidikan</span>
               </a>
             </li> -->
 
@@ -281,6 +283,36 @@
                             <label for="formDesc" class="form-label">Deskripsi</label>
                             <input type="text" class="form-control" id="formDesc" name="desc"required>
                         </div>
+                        <div class="col-md-12 mt-4">
+                            <label for="formMenu" class="form-label">Menu</label>
+                            <select id="formMenu" class="form-control"  name="menu" required>
+                              <option value=""></option>
+
+                                <?php if ($_GET['type'] == 'Kakao' or $_GET['type'] == 'Pendidikan' or $_GET['type'] == 'Perikanan' ) {?>
+                                  <option value="UBT">UBT</option>
+                              
+                                <?php } if ($_GET['type'] == 'Kakao' or $_GET['type'] == 'Kesehatan' or $_GET['type'] == 'Stunting' or $_GET['type'] == 'BUMDESa' ) {?>
+                                  <option value="PPG">PPG</option>
+                                  
+                                <?php } if ($_GET['type'] == 'Kakao' or $_GET['type'] == 'Peternakan' or $_GET['type'] == 'Stunting' ) {?>
+                                  <option value="PENS">PENS</option>
+
+                                <?php } if ($_GET['type'] == 'Perikanan' ) {?>
+                                <option value="UNPAD">UNPAD</option>
+                                
+                                <?php } if ($_GET['type'] == 'Dokumentasi' ) {?>
+                                <option value="-">-</option>
+                                <?php } ?>
+                            </select>                        
+                          </div>
+                        <div class="col-md-12 mt-4">
+                            <label for="formSub" class="form-label">Sub Menu</label>
+                            <select id="formSub" class="form-control"  name="sub" required>
+                              <option value=""></option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                            </select>                        
+                          </div>
                         <div class="col-md-12 mt-4">
                             <input type="file"  id="formGambar" name="gambar">
                         </div>

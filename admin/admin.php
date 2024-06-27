@@ -1,5 +1,5 @@
 <?php
-        $type = ["Kakao", "Jagung", "Perikanan", "Peternakan", "Kesehatan", "Stunting"];
+        $type = ["Kakao", "Pendidikan", "Perikanan", "Peternakan", "Kesehatan", "Stunting", "BUMDESa", "Dokumentasi"];
 
 ?>
 
@@ -336,10 +336,10 @@
             <?php
                for($i=0; $i < count($type); $i++){
             ?>
-            <li class="nav-item">
-            <a class="nav-link" href="cluster-<?=$type[$i] ?>.php?type=<?=$type[$i] ?>">
+            <li class="nav-item" >
+              <a class="nav-link" href="cluster-<?=$type[$i] ?>.php?type=<?=$type[$i] ?>">
                 <i class="icon-head menu-icon"></i>
-                <span class="menu-title">Cluster <?=$type[$i] ?></span>
+                <span class="menu-title"><?=($type[$i]!="BUMDESa" and $type[$i]!="Dokumentasi")? "Cluster":""?> <?=$type[$i] ?></span>
               </a>
             </li>
             <?php

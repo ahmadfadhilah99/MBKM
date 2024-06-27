@@ -349,14 +349,13 @@
               <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
                   <i class="icon-head menu-icon"></i>
-                  <span class="menu-title">Cluster Jagung</span>
+                  <span class="menu-title">Cluster Pendidikan</span>
                   <i class="menu-arrow"></i>
                 </a>
                 <div class="collapse" id="form-elements">
                   <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="ppg-utama-jagung.php">Poltek Piksi Ganesha</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pens-utama-jagung.php">PENS</a></li>
-                  </ul>
+                     <li class="nav-item"><a class="nav-link" href="ubt-utama-pendidikan.php">UBT</a></li>
+                   </ul>
                 </div>
               </li>
               <li class="nav-item">
@@ -437,8 +436,8 @@
                 <div class="col-md-12 mb-4 stretch-card transparent ">
                     <div class="card p-3 shadow">
                         <div class="card-body ">
-                            <h2><b>Cluster Kakao UBT</b></h2>
-                            <p>Informasi tentang Cluster Kakao pada menu UBT.</p>
+                            <h2><b>Cluster Peternakan PENS</b></h2>
+                            <p>Informasi tentang Cluster Peternakan pada menu PENS.</p>
                         </div>
                     </div>
                 </div>
@@ -448,7 +447,7 @@
                 <div class="row">
                     <div class="col-md-6 mb-4 stretch-card transparent">
                         <div class="card card-tale">
-                          <a href="galeri/ubt-kakao-galeriA.php">
+                          <a href="galeri/pens-galeri.php?page=pensPeternakanA&type=peternakan">
                             <div class="card-body image-gallery">
                               <figure>
                                 <img src="../images/carousel/banner_1.jpg" alt="Image 1">
@@ -460,7 +459,7 @@
                       </div>
                     <div class="col-md-6 mb-4 stretch-card transparent">
                       <div class="card card-tale">
-                          <a href="galeri/ubt-kakao-galeriB.php">
+                          <a href="galeri/pens-galeri.php?page=pensPeternakanB&type=peternakan">
                             <div class="card-body image-gallery">
                                 <figure>
                                 <img src="../images/carousel/banner_2.jpg" alt="Image 2">

@@ -5,8 +5,7 @@
 
     $data = mysqli_query($mysqli, "SELECT * FROM `tbl_cluster` WHERE `type_cluster`='$info'");
 
-        $type = ["Kakao", "Pendidikan", "Perikanan", "Peternakan", "Kesehatan", "Stunting", "BUMDESa", "Dokumentasi"];
-
+    $type = ["Kakao", "Pendidikan", "Perikanan", "Peternakan", "Kesehatan", "Stunting", "BUMDESa", "Dokumentasi"];
 
     $no=0;
 ?>

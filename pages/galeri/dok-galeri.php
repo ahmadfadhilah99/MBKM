@@ -1,3 +1,17 @@
+<?php 
+  include_once('../../Koneksi/config.php');
+  
+  // Mengambil data sesuai dengan halaman yang ada
+  if (isset($_GET['page'])) {
+      // Dokumentasi
+    if ($_GET['page'] == 'dokumentasiA') {
+        $data = mysqli_query($mysqli, "SELECT * FROM `tbl_cluster` WHERE `type_cluster`='Dokumentasi' and `sub_menu_cluster`='A'");
+    } if ($_GET['page'] == 'dokumentasiB') {
+        $data = mysqli_query($mysqli, "SELECT * FROM `tbl_cluster` WHERE `type_cluster`='Dokumentasi' and `sub_menu_cluster`='B'");
+    }
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,22 +20,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>MBKM Membangun Desa</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="../vendors/feather/feather.css" />
-    <link rel="stylesheet" href="../vendors/ti-icons/css/themify-icons.css" />
-    <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css" />
+    <link rel="stylesheet" href="../../vendors/feather/feather.css" />
+    <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css" />
+    <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css" />
     <!-- endinject -->
     <!-- Plugin css for this page -->
-    <link rel="stylesheet" href="../vendors/datatables.net-bs4/dataTables.bootstrap4.css" />
-    <link rel="stylesheet" href="../vendors/ti-icons/css/themify-icons.css" />
-    <link rel="stylesheet" type="text/css" href="../js/select.dataTables.min.css" />
+    <link rel="stylesheet" href="../../vendors/datatables.net-bs4/dataTables.bootstrap4.css" />
+    <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css" />
+    <link rel="stylesheet" type="text/css" href="../../js/select.dataTables.min.css" />
     <!-- End plugin css for this page -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="../css/vertical-layout-light/style.css" />
+    <link rel="stylesheet" href="../../css/vertical-layout-light/style.css" />
     
     <!-- inject:css for galeri image -->
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
     <!-- endinject -->
-    <link rel="shortcut icon" href="../images/favicon.png" />
+    <link rel="shortcut icon" href="../../images/favicon.png" />
   </head>
   <body>
     <div class="container-scroller">
@@ -29,10 +43,10 @@
       <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
           <a class="navbar-brand brand-logo mr-5" href="index.html">
-            <img src="../images/carousel/Logo PKN.png" class="mr-2" alt="logo" />
+            <img src="../../images/carousel/Logo PKN.png" class="mr-2" alt="logo" />
           </a>
           <a class="navbar-brand brand-logo-mini" href="index.html">
-            <img src="../images/logo-mini.svg" alt="logo" />
+            <img src="../../images/logo-mini.svg" alt="logo" />
           </a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
@@ -93,27 +107,27 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <img src="../images/carousel/download (25).png" alt="" style="height: 40px; width: 55px;">
+                <img src="../../images/carousel/download (25).png" alt="" style="height: 40px; width: 55px;">
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <img src="../images/carousel/ubt png.png" alt="" style="height: 45px; width: 45px;">
+                <img src="../../images/carousel/ubt png.png" alt="" style="height: 45px; width: 45px;">
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <img src="../images/carousel/logo-unpad1.png" alt="" style="height: 40px; width: 48px;">
+                <img src="../../images/carousel/logo-unpad1.png" alt="" style="height: 40px; width: 48px;">
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <img src="../images/carousel/Logo_PENS.png" alt="" style="height: 40px; width: 40px;">
+                <img src="../../images/carousel/Logo_PENS.png" alt="" style="height: 40px; width: 40px;">
               </a>
             </li>              
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <img src="../images/carousel/Politeknik_Piksi_Ganesha_Bandung.png" alt="" style="height: 40px; width: 40px;">
+                <img src="../../images/carousel/Politeknik_Piksi_Ganesha_Bandung.png" alt="" style="height: 40px; width: 40px;">
               </a>
             </li>
             <li class="nav-item nav-settings d-none d-lg-flex">
@@ -325,12 +339,12 @@
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
               <li class="nav-item">
-                <a class="nav-link" href="../index.php">
+                <a class="nav-link" href="../../index.php">
                   <i class="icon-grid menu-icon"></i>
                   <span class="menu-title">Dashboard</span>
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item <?=($_GET['type'] == 'kakao') ? 'active' : '' ?>">
                 <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                   <i class="icon-head menu-icon"></i>
                   <span class="menu-title">Cluster Kakao</span>
@@ -338,13 +352,13 @@
                 </a>
                 <div class="collapse" id="ui-basic">
                   <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="ubt-utama-kakao.php">UBT</a></li>
-                    <li class="nav-item"><a class="nav-link" href="ppg-utama-kakao.php">Poltek Piksi Ganesha</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pens-utama-kakao.php">PENS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../ubt-utama-kakao.php">UBT</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../ppg-utama-kakao.php">Poltek Piksi Ganesha</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../pens-utama-kakao.php">PENS</a></li>
                   </ul>
                 </div>
               </li>
-              <li class="nav-item">
+              <li class="nav-item <?=($_GET['type'] == 'pendidikan') ? 'active' : '' ?>">
                 <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
                   <i class="icon-head menu-icon"></i>
                   <span class="menu-title">Cluster Pendidikan</span>
@@ -352,11 +366,10 @@
                 </a>
                 <div class="collapse" id="form-elements">
                   <ul class="nav flex-column sub-menu">
-                     <li class="nav-item"><a class="nav-link" href="ubt-utama-pendidikan.php">UBT</a></li>
-                   </ul>
+                    <li class="nav-item"><a class="nav-link" href="../ubt-utama-pendidikan.php">ubt</a></li>                  </ul>
                 </div>
               </li>
-              <li class="nav-item">
+              <li class="nav-item <?=($_GET['type'] == 'perikanan') ? 'active' : '' ?>">
                 <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
                   <i class="icon-head menu-icon"></i>
                   <span class="menu-title">Cluster Perikanan</span>
@@ -364,12 +377,12 @@
                 </a>
                 <div class="collapse" id="charts">
                   <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="unpad-utama-perikanan.php">UNPAD</a></li>
-                    <li class="nav-item"><a class="nav-link" href="ubt-utama-perikanan.php">UBT</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../unpad-utama-perikanan.php">UNPAD</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../ubt-utama-perikanan.php">UBT</a></li>
                   </ul>
                 </div>
               </li>
-              <li class="nav-item">
+              <li class="nav-item <?=($_GET['type'] == 'peternakan') ? 'active' : '' ?>">
                 <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
                   <i class="icon-head menu-icon"></i>
                   <span class="menu-title">Cluster Peternakan</span>
@@ -377,11 +390,11 @@
                 </a>
                 <div class="collapse" id="tables">
                   <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="pens-utama-peternakan.php">PENS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../pens-utama-peternakan.php">PENS</a></li>
                   </ul>
                 </div>
               </li>
-              <li class="nav-item">
+              <li class="nav-item <?=($_GET['type'] == 'kesehatan') ? 'active' : '' ?>">
                 <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
                   <i class="icon-head menu-icon"></i>
                   <span class="menu-title">Cluster Kesehatan</span>
@@ -389,11 +402,11 @@
                 </a>
                 <div class="collapse" id="icons">
                   <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="ppg-utama-kesehatan.php">Poltek Piksi Ganesha</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../ppg-utama-kesehatan.php">Poltek Piksi Ganesha</a></li>
                   </ul>
                 </div>
               </li>
-              <li class="nav-item">
+              <li class="nav-item <?=($_GET['type'] == 'stunting') ? 'active' : '' ?>">
                 <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
                   <i class="icon-head menu-icon"></i>
                   <span class="menu-title">Cluster Stunting</span>
@@ -401,12 +414,12 @@
                 </a>
                 <div class="collapse" id="auth">
                   <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="pens-utama-stunting.php"> PENS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="ppg-utama-stunting.php">Poltek Piksi Ganesha</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../pens-utama-stunting.php"> PENS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../ppg-utama-stunting.php">Poltek Piksi Ganesha</a></li>
                   </ul>
                 </div>
               </li>
-              <li class="nav-item">
+              <li class="nav-item <?=($_GET['type'] == 'bumdes') ? 'active' : '' ?>">
                 <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
                   <i class="icon-head menu-icon"></i>
                   <span class="menu-title">BUMDESa</span>
@@ -414,81 +427,93 @@
                 </a>
                 <div class="collapse" id="error">
                   <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="ppg-utama-bumdes.php">Poltek Piksi Ganesha</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../ppg-utama-bumdes.php">Poltek Piksi Ganesha</a></li>
                   </ul>
                 </div>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="dok-utama.php">
+              <li class="nav-item <?=($_GET['type'] == 'dokumentasi') ? 'active' : '' ?>">
+                <a class="nav-link" href="../dok-utama.php">
                   <i class="icon-paper menu-icon"></i>
                   <span class="menu-title">Dokumentasi</span>
                 </a>
               </li>
             </ul>
         </nav>
-
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
-              <div class="row">
+             
+          <!-- Menampilkan beberapa data menggunakan 1 file saja -->
+           <!-- Kakao -->
+          <?php if (isset($_GET['page'])) {
+              if ($_GET['page'] == 'dokumentasiA') {
+            ?>
+            <div class="row">
                 <div class="col-md-12 mb-4 stretch-card transparent ">
                     <div class="card p-3 shadow">
                         <div class="card-body ">
-                            <h2><b>Cluster Stunting PENS</b></h2>
-                            <p>Informasi tentang Cluster Stunting pada menu PENS.</p>
+                            <h2><b>Galeri Dokumentasi A</b></h2>
+                            <p>Informasi tentang Galeri Dokumentasi A.</p>
+                            <a href="../dok-utama.php">kembali</a>
                         </div>
                     </div>
                 </div>
             </div>
+            <?php } if ($_GET['page'] == 'dokumentasiB') { ?>
+                <div class="row">
+                <div class="col-md-12 mb-4 stretch-card transparent ">
+                    <div class="card p-3 shadow">
+                        <div class="card-body ">
+                            <h2><b>Galeri Dokumentasi B</b></h2>
+                            <p>Informasi tentang Galeri Dokumentasi B.</p>
+                            <a href="../dok-utama.php">kembali</a>
+                        </div>
+                    </div>
+                </div>
+            </div>       
+            
+            <?php } }?>
+
+            
+            
 
 
                 <div class="row">
-                    <div class="col-md-6 mb-4 stretch-card transparent">
+                  <?php while ($cluster = mysqli_fetch_array($data)) { ?>
+                    <div class="col-md-4 mb-4 stretch-card transparent">
                         <div class="card card-tale">
-                          <a href="galeri/pens-galeri.php?page=pensStuntingA&type=stunting">
-                            <div class="card-body image-gallery">
-                              <figure>
-                                <img src="../images/carousel/banner_1.jpg" alt="Image 1">
-                                <figcaption>Keterangan untuk Menu A</figcaption>
-                              </figure>
-                            </div>
-                          </a>
-                        </div>
-                      </div>
-                    <div class="col-md-6 mb-4 stretch-card transparent">
-                      <div class="card card-tale">
-                          <a href="galeri/pens-galeri.php?page=pensStuntingB&type=stunting">
                             <div class="card-body image-gallery">
                                 <figure>
-                                <img src="../images/carousel/banner_2.jpg" alt="Image 2">
-                                <figcaption>Keterangan untuk Menu B</figcaption>
+                                <img src="../../images/cluster/<?= $cluster['image_cluster']; ?>" alt="Image <?= $i; ?>">
+                                <figcaption><?= $cluster['desc_cluster']; ?></figcaption>
                                 </figure>
                             </div>
                         </div>
                     </div>
+                    <?php }; ?> 
                 </div>
                 
            
 
     <!-- plugins:js -->
-    <script src="../vendors/js/vendor.bundle.base.js"></script>
+    <script src="../../vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
-    <script src="../vendors/chart.js/Chart.min.js"></script>
-    <script src="../vendors/datatables.net/jquery.dataTables.js"></script>
-    <script src="../vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
-    <script src="../js/dataTables.select.min.js"></script>
+    <script src="../../vendors/chart.js/Chart.min.js"></script>
+    <script src="../../vendors/datatables.net/jquery.dataTables.js"></script>
+    <script src="../../vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+    <script src="../../js/dataTables.select.min.js"></script>
     <!-- End plugin js for this page -->
     <!-- inject:js -->
-    <script src="../js/off-canvas.js"></script>
-    <script src="../js/hoverable-collapse.js"></script>
-    <script src="../js/template.js"></script>
-    <script src="../js/settings.js"></script>
-    <script src="../js/todolist.js"></script>
+    <script src="../../js/off-canvas.js"></script>
+    <script src="../../js/hoverable-collapse.js"></script>
+    <script src="../../js/template.js"></script>
+    <script src="../../js/settings.js"></script>
+    <script src="../../js/todolist.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page-->
-    <script src="../js/dashboard.js"></script>
-    <script src="../js/Chart.roundedBarCharts.js"></script>
+    <script src="../../js/dashboard.js"></script>
+    <script src="../../js/Chart.roundedBarCharts.js"></script>
     <!-- End custom js for this page-->
   </body>
 </html>

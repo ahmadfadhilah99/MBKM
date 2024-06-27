@@ -5,7 +5,7 @@
 
     $data = mysqli_query($mysqli, "SELECT * FROM `tbl_cluster` WHERE `type_cluster`='$info'");
 
-        $type = ["Kakao", "Jagung", "Perikanan", "Peternakan", "Kesehatan", "Stunting"];
+        $type = ["Kakao", "Pendidikan", "Perikanan", "Peternakan", "Kesehatan", "Stunting", "BUMDESa", "Dokumentasi"];
 
 
     $no=0;
@@ -189,21 +189,15 @@
                for($i=0; $i < count($type); $i++){
             ?>
             <li class="nav-item" >
-            <a class="nav-link" href="cluster-<?=$type[$i] ?>.php?type=<?=$type[$i] ?>">
+              <a class="nav-link" href="cluster-<?=$type[$i] ?>.php?type=<?=$type[$i] ?>">
                 <i class="icon-head menu-icon"></i>
-                <span class="menu-title">Cluster <?=$type[$i] ?></span>
+                <span class="menu-title"><?=($type[$i]!="BUMDESa" and $type[$i]!="Dokumentasi")? "Cluster":""?> <?=$type[$i] ?></span>
               </a>
             </li>
             <?php
                 }
             ?>
-            <!-- <li class="nav-item">
-            <a class="nav-link" href="cluster-jagung.php">
-                <i class="icon-head menu-icon"></i>
-                <span class="menu-title">Cluster Jagung</span>
-              </a>
-            </li> -->
-
+    
           </ul>
         </nav>
         <!-- partial -->
@@ -249,16 +243,18 @@
             <div class="row">
               <div class="col-md-12 grid-margin stretch-card">
                 <div class="card tale-bg p-3">
-                 <a href="tambah.php?type=<?= $_GET['type']?>" class="mb-3 btn btn-primary"><b>Tambah</b></a>
+                  <a href="tambah.php?type=<?= $_GET['type']?>" class="mb-3 btn btn-primary"><b>Tambah</b></a>
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>No</th>
-                                    <th>Type</th>
-                                    <th>Deskripsi</th>
-                                    <th>Gambar</th>
-                                    <th>action</th>
+                                    <th class="text-center">No</th>
+                                    <th class="text-center">Type</th>
+                                    <th class="text-center">Menu</th>
+                                    <th class="text-center"></th>
+                                    <th class="text-center">Deskripsi</th>
+                                    <th class="text-center">Gambar</th>
+                                    <th class="text-center">action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -267,9 +263,11 @@
                                         $no++; 
                                 ?>
                                 <tr>
-                                    <td><?=$no; ?></td>
-                                    <td><?=$cluster['type_cluster'] ?></td>
-                                    <td><?=$cluster['desc_cluster'] ?></td>
+                                    <td class="text-center"><?=$no; ?></td>
+                                    <td class="text-center"><?=$cluster['type_cluster'] ?></td>
+                                    <td class="text-center"><?=$cluster['menu_cluster'] ?></td>
+                                    <td class="text-center"><?=$cluster['sub_menu_cluster'] ?></td>
+                                    <td ><?=$cluster['desc_cluster'] ?></td>
                                     <td><img src="../images/cluster/<?=$cluster['image_cluster'] ?>"  alt="" height="80" width="80" style="border-radius: 0; width:80px; height:80px; object-fit:cover;"> </td>
                                     <td style="max-width: 150px;">
                                         <a href="edit.php?id=<?=$cluster['id_cluster']?>&type=<?=$cluster['type_cluster'] ?>" class="btn btn-warning"><b>edit</b></a>

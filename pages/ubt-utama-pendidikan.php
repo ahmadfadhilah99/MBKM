@@ -6,22 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>MBKM Membangun Desa</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="../../vendors/feather/feather.css" />
-    <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css" />
-    <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css" />
+    <link rel="stylesheet" href="../vendors/feather/feather.css" />
+    <link rel="stylesheet" href="../vendors/ti-icons/css/themify-icons.css" />
+    <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css" />
     <!-- endinject -->
     <!-- Plugin css for this page -->
-    <link rel="stylesheet" href="../../vendors/datatables.net-bs4/dataTables.bootstrap4.css" />
-    <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css" />
-    <link rel="stylesheet" type="text/css" href="../../js/select.dataTables.min.css" />
+    <link rel="stylesheet" href="../vendors/datatables.net-bs4/dataTables.bootstrap4.css" />
+    <link rel="stylesheet" href="../vendors/ti-icons/css/themify-icons.css" />
+    <link rel="stylesheet" type="text/css" href="../js/select.dataTables.min.css" />
     <!-- End plugin css for this page -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="../../css/vertical-layout-light/style.css" />
+    <link rel="stylesheet" href="../css/vertical-layout-light/style.css" />
     
     <!-- inject:css for galeri image -->
-    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <!-- endinject -->
-    <link rel="shortcut icon" href="../../images/favicon.png" />
+    <link rel="shortcut icon" href="../images/favicon.png" />
   </head>
   <body>
     <div class="container-scroller">
@@ -29,10 +29,10 @@
       <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
           <a class="navbar-brand brand-logo mr-5" href="index.html">
-            <img src="../../images/carousel/Logo PKN.png" class="mr-2" alt="logo" />
+            <img src="../images/carousel/Logo PKN.png" class="mr-2" alt="logo" />
           </a>
           <a class="navbar-brand brand-logo-mini" href="index.html">
-            <img src="../../images/logo-mini.svg" alt="logo" />
+            <img src="../images/logo-mini.svg" alt="logo" />
           </a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
@@ -93,27 +93,27 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <img src="../../images/carousel/download (25).png" alt="" style="height: 40px; width: 55px;">
+                <img src="../images/carousel/download (25).png" alt="" style="height: 40px; width: 55px;">
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <img src="../../images/carousel/ubt png.png" alt="" style="height: 45px; width: 45px;">
+                <img src="../images/carousel/ubt png.png" alt="" style="height: 45px; width: 45px;">
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <img src="../../images/carousel/logo-unpad1.png" alt="" style="height: 40px; width: 48px;">
+                <img src="../images/carousel/logo-unpad1.png" alt="" style="height: 40px; width: 48px;">
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <img src="../../images/carousel/Logo_PENS.png" alt="" style="height: 40px; width: 40px;">
+                <img src="../images/carousel/Logo_PENS.png" alt="" style="height: 40px; width: 40px;">
               </a>
             </li>              
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <img src="../../images/carousel/Politeknik_Piksi_Ganesha_Bandung.png" alt="" style="height: 40px; width: 40px;">
+                <img src="../images/carousel/Politeknik_Piksi_Ganesha_Bandung.png" alt="" style="height: 40px; width: 40px;">
               </a>
             </li>
             <li class="nav-item nav-settings d-none d-lg-flex">
@@ -324,108 +324,107 @@
         <!-- partial:partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link" href="../../index.php">
-                <i class="icon-grid menu-icon"></i>
-                <span class="menu-title">Dashboard</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <i class="icon-head menu-icon"></i>
-                <span class="menu-title">Cluster Kakao</span>
-                <i class="menu-arrow"></i>
-              </a>
-              <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"><a class="nav-link" href="../ubt-utama.php?type=Kakao">UBT</a></li>
-                  <li class="nav-item"><a class="nav-link" href="../ppg-utama.php?type=Kakao">PoltekPiksi Ganesha</a></li>
-                  <li class="nav-item"><a class="nav-link" href="../pens-utama.php?type=Kakao">PENS</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
-                <i class="icon-head menu-icon"></i>
-                <span class="menu-title">Cluster Jagung</span>
-                <i class="menu-arrow"></i>
-              </a>
-              <div class="collapse" id="form-elements">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Poltek Piksi Ganesha</a></li>
-                  <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">PENS</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-                <i class="icon-head menu-icon"></i>
-                <span class="menu-title">Cluster Perikanan</span>
-                <i class="menu-arrow"></i>
-              </a>
-              <div class="collapse" id="charts">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"><a class="nav-link" href="pages/charts/chartjs.html">UNPAD</a></li>
-                  <li class="nav-item"><a class="nav-link" href="pages/charts/chartjs.html">UBT</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
-                <i class="icon-head menu-icon"></i>
-                <span class="menu-title">Cluster Peternakan</span>
-                <i class="menu-arrow"></i>
-              </a>
-              <div class="collapse" id="tables">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"><a class="nav-link" href="pages/tables/basic-table.html">PENS</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
-                <i class="icon-head menu-icon"></i>
-                <span class="menu-title">Cluster Kesehatan</span>
-                <i class="menu-arrow"></i>
-              </a>
-              <div class="collapse" id="icons">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"><a class="nav-link" href="pages/icons/mdi.html">Poltek Piksi Ganesha</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                <i class="icon-head menu-icon"></i>
-                <span class="menu-title">Cluster Stunting</span>
-                <i class="menu-arrow"></i>
-              </a>
-              <div class="collapse" id="auth">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"><a class="nav-link" href="pages/samples/login.html"> PENS</a></li>
-                  <li class="nav-item"><a class="nav-link" href="pages/samples/register.html">Poltek Piksi Ganesha</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
-                <i class="icon-head menu-icon"></i>
-                <span class="menu-title">BUMDESa</span>
-                <i class="menu-arrow"></i>
-              </a>
-              <div class="collapse" id="error">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"><a class="nav-link" href="pages/samples/error-404.html">Poltek Piksi Ganesha</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/documentation/documentation.html">
-                <i class="icon-paper menu-icon"></i>
-                <span class="menu-title">Dokumentasi</span>
-              </a>
-            </li>
-          </ul>
+              <li class="nav-item">
+                <a class="nav-link" href="../index.php">
+                  <i class="icon-grid menu-icon"></i>
+                  <span class="menu-title">Dashboard</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                  <i class="icon-head menu-icon"></i>
+                  <span class="menu-title">Cluster Kakao</span>
+                  <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="ui-basic">
+                  <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"><a class="nav-link" href="ubt-utama-kakao.php">UBT</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ppg-utama-kakao.php">Poltek Piksi Ganesha</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pens-utama-kakao.php">PENS</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+                  <i class="icon-head menu-icon"></i>
+                  <span class="menu-title">Cluster Pendidikan</span>
+                  <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="form-elements">
+                  <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"><a class="nav-link" href="ubt-utama-pendidikan.php">UBT</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+                  <i class="icon-head menu-icon"></i>
+                  <span class="menu-title">Cluster Perikanan</span>
+                  <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="charts">
+                  <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"><a class="nav-link" href="unpad-utama-perikanan.php">UNPAD</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ubt-utama-perikanan.php">UBT</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+                  <i class="icon-head menu-icon"></i>
+                  <span class="menu-title">Cluster Peternakan</span>
+                  <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="tables">
+                  <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"><a class="nav-link" href="pens-utama-peternakan.php">PENS</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+                  <i class="icon-head menu-icon"></i>
+                  <span class="menu-title">Cluster Kesehatan</span>
+                  <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="icons">
+                  <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"><a class="nav-link" href="ppg-utama-kesehatan.php">Poltek Piksi Ganesha</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                  <i class="icon-head menu-icon"></i>
+                  <span class="menu-title">Cluster Stunting</span>
+                  <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="auth">
+                  <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"><a class="nav-link" href="pens-utama-stunting.php"> PENS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ppg-utama-stunting.php">Poltek Piksi Ganesha</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
+                  <i class="icon-head menu-icon"></i>
+                  <span class="menu-title">BUMDESa</span>
+                  <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="error">
+                  <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"><a class="nav-link" href="ppg-utama-bumdes.php">Poltek Piksi Ganesha</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="dok-utama.php">
+                  <i class="icon-paper menu-icon"></i>
+                  <span class="menu-title">Dokumentasi</span>
+                </a>
+              </li>
+            </ul>
         </nav>
 
         <!-- partial -->
@@ -435,9 +434,8 @@
                 <div class="col-md-12 mb-4 stretch-card transparent ">
                     <div class="card p-3 shadow">
                         <div class="card-body ">
-                            <h2><b>Galeri Kakao</b></h2>
-                            <p>Informasi tentang Galeri Kakao Menu UBT B.</p>
-                            <a href="../ubt-utama.php?type=Kakao">kembali</a>
+                            <h2><b>Cluster Pendidikan UBT</b></h2>
+                            <p>Informasi tentang Cluster Pendidikan pada menu UBT.</p>
                         </div>
                     </div>
                 </div>
@@ -445,41 +443,52 @@
 
 
                 <div class="row">
-                    <?php for($i=1; $i <= 12; $i++){?>
-                    <div class="col-md-4 mb-4 stretch-card transparent">
+                    <div class="col-md-6 mb-4 stretch-card transparent">
                         <div class="card card-tale">
+                          <a href="galeri/ubt-galeri.php?page=ubtPendidikanA&type=pendidikan">
+                            <div class="card-body image-gallery">
+                              <figure>
+                                <img src="../images/carousel/banner_1.jpg" alt="Image 1">
+                                <figcaption>Keterangan untuk Menu A</figcaption>
+                              </figure>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    <div class="col-md-6 mb-4 stretch-card transparent">
+                      <div class="card card-tale">
+                          <a href="galeri/ubt-galeri.php?page=ubtPendidikanB&type=pendidikan">
                             <div class="card-body image-gallery">
                                 <figure>
-                                <img src="../../images/carousel/banner_<?= $i; ?>.jpg" alt="Image <?= $i; ?>">
-                                <figcaption>Keterangan untuk Image <?= $i; ?></figcaption>
+                                <img src="../images/carousel/banner_2.jpg" alt="Image 2">
+                                <figcaption>Keterangan untuk Menu B</figcaption>
                                 </figure>
                             </div>
                         </div>
                     </div>
-                    <?php }; ?> 
                 </div>
                 
            
 
     <!-- plugins:js -->
-    <script src="../../vendors/js/vendor.bundle.base.js"></script>
+    <script src="../vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
-    <script src="../../vendors/chart.js/Chart.min.js"></script>
-    <script src="../../vendors/datatables.net/jquery.dataTables.js"></script>
-    <script src="../../vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
-    <script src="../../js/dataTables.select.min.js"></script>
+    <script src="../vendors/chart.js/Chart.min.js"></script>
+    <script src="../vendors/datatables.net/jquery.dataTables.js"></script>
+    <script src="../vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+    <script src="../js/dataTables.select.min.js"></script>
     <!-- End plugin js for this page -->
     <!-- inject:js -->
-    <script src="../../js/off-canvas.js"></script>
-    <script src="../../js/hoverable-collapse.js"></script>
-    <script src="../../js/template.js"></script>
-    <script src="../../js/settings.js"></script>
-    <script src="../../js/todolist.js"></script>
+    <script src="../js/off-canvas.js"></script>
+    <script src="../js/hoverable-collapse.js"></script>
+    <script src="../js/template.js"></script>
+    <script src="../js/settings.js"></script>
+    <script src="../js/todolist.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page-->
-    <script src="../../js/dashboard.js"></script>
-    <script src="../../js/Chart.roundedBarCharts.js"></script>
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/Chart.roundedBarCharts.js"></script>
     <!-- End custom js for this page-->
   </body>
 </html>
